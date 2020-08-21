@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
 
 import org.springframework.stereotype.Component;
 import org.springframework.util.ResourceUtils;
@@ -24,7 +25,7 @@ public class MCardFileUtil {
 		String destCity=req.getDestination();
 		
 		boolean found=false;
-		Map<String,String> cityMap=new HashMap<String,String>();
+		Map<String,String> cityMap=new ConcurrentHashMap<String,String>();
 		try {
 			
 			/*
